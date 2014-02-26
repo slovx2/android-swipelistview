@@ -1,3 +1,5 @@
+[![Build Status][12]][13]
+
 SwipeListView ([Play Store Demo][1])
 =============
 
@@ -8,6 +10,7 @@ An Android List View implementation with support for drawable cells and many oth
   - [Maven Dependency](#maven-dependency)
 	- [APKLib and others](#apklib-and-others)
 	- [Dependencies](#dependencies)
+- [Using the standalone SwipeListView JAR](#using-the-standalone-swipelistview-jar)
 - [Demo](#demo)
 - [XML Usage](#xml-usage)
 - [License](#license)
@@ -56,8 +59,8 @@ SwipeListView official releases will be made available at Maven Central.
 ```
 ## APKLib and others
 
-You can get the releases, snapshots and other forms in which SwipeListView is distributed from the
-[Downloads][5] page.
+You can get the releases, snapshots and other forms in which SwipeListView is distributed from the Maven sonatype Repository here
+[Downloads][5].
 
 ## Dependencies
 
@@ -71,6 +74,17 @@ Depending on your requirements you may choose to include one of the following...
 - com.google.android :
     - support-v4 (Available in Maven Central)
 
+# Using the standalone SwipeListView JAR
+
+If you manually include the single SwipeListView jar [swipelistview-1.0-SNAPSHOT.jar][5] in your libs/ folder you would also have to add the following dependencies:
+
+- [nineoldandroids-2.4.0.jar][8]
+- android-support-v4
+
+You'd have to provide also the [attrs.xml][9] inside your directory "res/values" so the attributes are properly picked up by the runtime.
+
+We do discourage people from manually adding the jars and recomend following the maven or apklib aproach to include SwipeListView library in your own project.
+
 # Demo
 
 You can see a demo SwipeListView in action at [android-swipelistview-sample][2] or install it from [Google Play][1]
@@ -81,7 +95,7 @@ You can see a demo SwipeListView in action at [android-swipelistview-sample][2] 
 If you decide to use SwipeListView as a view, you can define it in your xml layout like this:
 
 ```xml
-    <com.fortysevendeg.android.swipelistview.SwipeListView
+    <com.fortysevendeg.swipelistview.SwipeListView
             xmlns:swipe="http://schemas.android.com/apk/res-auto"
             android:id="@+id/example_lv_list"
             android:listSelector="#00000000"
@@ -111,6 +125,12 @@ If you decide to use SwipeListView as a view, you can define it in your xml layo
 * `swipeOffsetLeft` - left offset
 * `swipeOffsetRight` - right offset
 
+# Continuous Integration
+
+CI and Artifact Repository hosted in ClinkerHQ.com 
+
+[![ClinkerHQ][10]][11]
+
 # License
 
 Copyright (C) 2012 47 Degrees, LLC
@@ -133,6 +153,12 @@ limitations under the License.
 [2]: https://github.com/47deg/android-swipelistview-sample
 [3]: http://developer.android.com/intl/es/tools/extras/support-library.html
 [4]: http://47deg.com
-[5]: https://github.com/47deg/android-swipelistview/downloads
+[5]: https://oss.sonatype.org/content/groups/public/com/fortysevendeg/android/swipelistview/1.0-SNAPSHOT/
 [6]: https://raw.github.com/47deg/android-swipelistview-sample/master/screenshot_swipelistview_small.png
 [7]: https://www.youtube.com/watch?v=E0352OH488M
+[8]: https://github.com/JakeWharton/NineOldAndroids/downloads
+[9]: https://github.com/47deg/android-swipelistview/tree/master/res/values
+[10]: http://dl.clinkerhq.com/assets/badge/clinker-badge_125x125.png
+[11]: http://clinkerhq.com
+[12]: https://clinker.47deg.com/desktop/plugin/public/status/android-swipelistview
+[13]: https://clinker.47deg.com/jenkins/job/android-swipelistview/
